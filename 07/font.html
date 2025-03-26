@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>글자 크기 지정하기</title>
+  <style>
+    /* font-size: <절대 크기> | <상대 크기> | <크기> | <백분율> */
+    /* <절대크기> : px, <상대 크기> : em, rem, <백분율> : % */
+    /* <크기> : xx-small(10px), x-small, small, medium, large, x-large, xx-large(32px) */
+    
+    /* 상대 크기 넣어보기 */
+    body {
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 200%; /* 부모요소의 font-size 기준 백분율 */
+    }
+    p{
+      font-size: 1em; /* 부모요소의 font-size 기준 배율 */
+    }
+    span {
+      font-size: 2rem;  /* 루트요소 (<html>)의 font-size 기준 배율 */ 
+    }
+  </style>
+</head>
+<body>
+  <h1>Lorem Ipsum</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl nisi, egestas a dictum id, laoreet et erat. Etiam cursus ex nec eros placerat, et finibus nisl convallis. Ut efficitur euismod accumsan. Integer vehicula id libero ut ullamcorper. Integer velit velit, tempor eu sollicitudin vitae, pellentesque non velit. Integer vehicula, purus et dignissim sodales, quam tellus pellentesque enim, a imperdiet lacus orci vitae lectus. Sed feugiat hendrerit magna, non laoreet lacus rhoncus nec. Nullam pharetra a turpis et accumsan. Pellentesque volutpat justo sed ligula tincidunt sodales. Nunc pharetra dui massa, id luctus nunc vestibulum et. Ut sed erat scelerisque mi congue mattis.</p>
+  <p>Aenean sed semper tortor, non porta velit. Vivamus dolor sem, maximus et purus non, ultrices accumsan nisl. Proin interdum tellus quis dignissim scelerisque. Duis facilisis blandit neque, eget dictum lacus porttitor et. Fusce in lacus ac lacus consectetur rhoncus. Suspendisse ultrices imperdiet urna, eget gravida eros efficitur sit amet. Proin rutrum tortor ac fringilla euismod. Vivamus a venenatis leo, ac sodales augue. Maecenas at condimentum ipsum. Donec aliquam felis a dui tempus tristique. Cras hendrerit libero augue, eu auctor sem feugiat id. Suspendisse viverra dictum sapien, in facilisis arcu lobortis sit amet. Sed rutrum magna sapien, vitae eleifend ligula mollis vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur cursus et tellus et iaculis. Aliquam posuere quis turpis eu convallis.</p>
+  <span>Donec at augue urna. Morbi tincidunt elementum massa, eget maximus eros tempor et. Morbi lobortis eget urna at vulputate. Nunc et velit mi. Donec ac pulvinar odio, eleifend gravida mi. Nulla sit amet risus eget libero fermentum pharetra. Morbi vulputate magna sit amet nisl lacinia volutpat. Suspendisse venenatis eleifend ornare. Aenean eleifend, metus ac tempor rutrum, mi arcu mattis urna, vel pretium urna nisl eget urna. Maecenas rutrum iaculis nunc at hendrerit. Phasellus sed maximus ex, sit amet ullamcorper quam. Aliquam vitae lacus condimentum, elementum eros non, laoreet quam. Aliquam faucibus libero et dui gravida ornare. Nam congue felis eget leo porttitor, et suscipit massa faucibus.</p>
+ 
+</body>
+</html>

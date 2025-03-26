@@ -1,0 +1,13 @@
+#container{
+  width: 800px; /* 컨테이너 너비 */
+  margin: 0 auto; /*위 아래 0, 오른 왼 auto*/
+}
+
+table, th, td {
+  border: 1px solid #222; /* 표 테두리 */
+  border-collapse: collapse; /* 테두리 한 줄만 표시 */
+}
+
+th, td {
+  padding: 10px; /* 셀 안쪽의 여백 */
+}

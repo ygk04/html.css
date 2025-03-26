@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스모델</title>
+    <!-- border-width : <크기> | thin | medium | thick-->
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        border-style: solid;
+        display: inline-block;
+        margin: 15px;
+      }
+      #box1 {
+        border-width: 2px; /* 네 방향 모두 2px */
+      }
+      #box2 {
+        border-width: thick thin; /* 위아래 좌우 */
+      }
+      #box3 {
+        border-width: thick thin medium; /* 위 우 아래 (좌 반대편 우)*/
+      }
+      #box4 {
+        border-width: 10px 5px 5px 10px; /* 위 우 아래 좌*/
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+  </body>
+</html>

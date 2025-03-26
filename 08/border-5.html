@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스모델</title>
+    <style>
+      /* 픽셀: 실제 너비와 높이에 관계 없이 고정된 크기 */
+      /* 만약 요소의 너비나 높이보다 클 경우, 너비와 높이중 더 작은 값의 50%까지 */
+
+      /* 백분율 : 너비와 높이의 상대 비율로 계산 */
+      /* 백분율 값은 너비와 높이 중 더 큰값의 비율로 적용됨 */
+
+      img {
+        width: 300px;
+        height: 199px;
+        border-top-left-radius: 30px 10px; /* 타원체 : 너비 30px, 높이 10px */
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+
+      #round {
+        border-radius: 50%; /* 모든 꼭짓점을 둥글게 */
+      }
+      /* top-left, top-right, bottom-left, bottom-right */
+    </style>
+  </head>
+  <body>
+    <img src="./images/cat.jpg" />
+    <img id="round" src="./images/cat.jpg" />
+  </body>
+</html>

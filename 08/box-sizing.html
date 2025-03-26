@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스모델</title>
+    <style>
+      button {
+        font-size: 2em;
+        background: #fff;
+        padding: 15px 30px;
+        margin: 15px;
+        border: 1px solid #222;
+      }
+
+      div {
+        margin-bottom: 20px;
+      }
+      .box1 {
+        box-sizing: content-box; /* 컨텐츠 크기 너비를 정확하게 계산하려면 */
+        width: 200px; /* 실제 너비: 컨텐츠 크기(200px) + padding(20px+20px) + border(10px+10x) */
+        height: 100px;
+        padding: 20px;
+        border: 10px solid #ccc;
+        /* box-shadow : <수평거리> <수직거리> <흐림 정도> <번짐 정도> <색상> inset */
+        /* 그림자를 안쪽으로 그린다 */
+        box-shadow: 2px -2px 5px 0px inset;
+      }
+      .box2 {
+        box-sizing: border-box; /* 박스 크기를 쉽게 계산하려면 border-box로 놓는 것이 좋은 편 */
+        width: 200px; /* 실제 너비 : 200px = 컨텐츠 크기(140) + padding (20+20) + border(10+10) */
+        height: 100px;
+        padding: 20px;
+        border: 10px solid #ccc;
+        box-shadow: 5px 5px 15px 5px blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Do it</button>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

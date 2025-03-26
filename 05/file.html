@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레드향 주문하기</title>
+</head>
+<body>
+  <h1>레드향 주문하기</h1>
+  <!-- GET(URL 길이 제한 2KB)에 비해 POST는 더 많이 보낼 수 있다. 웹서버에 따라 다르지만 보통 1MB ~ 2GB -->
+  <!-- form 안에 데이터 + 파일을 같이 보내며 나눠서 보낸다. 요청이 여러번 갈 수 있음 -->
+  <form id="returnForm" enctype="multipart/form-data" method="post"> <!-- 기본 인코딩은 x-www-urlEncoded -->
+    <fieldset>
+      <legend>반품 정보</legend>
+      <p>만일 수령한 상품에 문제가 있다면 즉시 <b>반품 신청</b>해 주세요.</p>
+      <p>반품 신청시 상품의 상태를 사진으로 첨부해 주세요.</p>
+      <hr>
+      <!-- <input type="text" name="order-name"> -->
+      <input type="file" id="file-input" name="file-data"> <!-- 서버에 넘기는 키 이름 -->
+    </fieldset>
+    <div>
+      <input type="submit" value="반품 신청"> 
+      <input type="reset" value="취소하기">
+    </div>        
+  </form>
+  <!-- submit 기본 인코딩 : application/x-www-form-urlencoded 방식 -->
+  <!-- 모든 데이터가 key=value&key2=value2 형태로 한 줄로 인코딩되어 전송됨.
+  텍스트 기반이므로 개발자 도구에서 쉽게 확인 가능. -->
+
+  <!-- multipart/form-data 방식 -->
+  <!-- 데이터가 여러 개의 파트(부분)로 나뉘어 전송됨.
+  각 파트마다 **헤더(Content-Disposition, Content-Type)**가 포함됨.
+  파일은 바이너리 데이터로 전송됨.
+  개발자 도구(Network → 요청 → Request Payload)에서 폼 데이터가 여러 개의 파트로 나뉘어 표시됨. -->
+
+  <!-- JSON으로 파일 전송 불가 -->
+  <!-- JSON은 주로 텍스트 데이터를 처리하는 포맷, 전송 용량 제한으로 파일을 한번에 보낼 수도 없음 -->
+  <!-- JSON의 텍스트 인코딩은 Base64는 바이너리 데이터를 텍스트로 변환하지만, 
+   그로 인해 파일 크기가 약 33% 정도 더 증가하고 서버에서 디코딩하는 부하도 발생 -->
+   
+   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script>
+    $('#returnForm').submit(function(event) {
+      event.preventDefault(); // 기본 폼 제출을 막고 JavaScript로 처리
+  
+      // FormData 객체 생성
+      const formData = new FormData();
+  
+      // 폼 데이터에 파일과 JSON 추가
+      const fileInput = $('#file-input')[0]; // jQuery로 선택 후 DOM 요소로 변환
+      const jsonData = { key: 'value' }; // JSON 데이터 예시
+      formData.append('json', JSON.stringify(jsonData));
+      formData.append('file', fileInput.files[0]);
+  
+      // Fetch API로 서버에 POST 요청 보내기
+      $.ajax({
+        url: '/upload', // 서버 URL
+        method: 'POST', // POST 요청
+        data: formData, // FormData 객체를 전송
+        processData: false, // jQuery가 데이터를 처리하지 않도록 설정
+        contentType: false, // 콘텐츠 타입 자동 설정 방지
+        success: function(data) {
+          console.log('성공:', data);
+          alert('반품 신청이 완료되었습니다!');
+        },
+        error: function(error) {
+          console.error('실패:', error);
+          alert('반품 신청에 실패했습니다.');
+        }
+      });
+    });
+  </script>  
+  </body>
+</html>
