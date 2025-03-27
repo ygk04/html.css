@@ -19,15 +19,20 @@
     <h2>3의 배수 찾기</h2>
     <script>
       let userNumber = prompt('숫자를 입력해 주세요');
-      let sum = 0;
+      let number = 0;
+      let count = 0;
+      
+      if (userNumber == null){
+       }for (let i = 1; i <= userNumber; i++) {
+          if (i % 3 == 0) {
+              number = i;50
 
-      if (userNumber === null)
-        for (let i = 1; i <= userNumber; i++) {
-          if (Number(userNumber) % 3 === 0) {
-            sum += i;
-            document.write(userNumber + '까지 3의 배수의 갯수 :' + i++);
-          }
+              count++;
+              document.write(number + ',');
+          }         
         }
+        document.write(`<p> ${userNumber} 까지 3의 배수의 갯수 : ${count} </p>`);
+      
     </script>
   </body>
 </html>
