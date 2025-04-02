@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>감성 다이어리</title>
+
+    <!-- JavaScript Libraries -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      defer></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script
+      src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"
+      defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/lang/summernote-ko-KR.min.js"
+      defer></script>
+    <!-- Custom JS File -->
+    <script src="js/main.js" defer></script>
+
+    <!-- CSS Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link
+      href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css"
+      rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/diary.css" />
+  </head>
+  <body>
+    <div id="diary-container">
+      <h2>감성 다이어리</h2>
+      <small>난... 가끔... 눈물을 흘린다...</small>
+      <br />
+      <div class="block-box">
+        <label for="diaryDate">날짜 :</label>
+        <input type="date" id="diaryDate" required />
+      </div>
+      <div class="block-box">
+        <label for="diaryTitle">제목 :</label>
+        <input type="text" id="diaryTitle" required />
+      </div>
+      <div class="block-box">
+        <textarea
+          id="diaryContent"
+          class="form-control"
+          cols="30"
+          rows="10"></textarea>
+      </div>
+      <div class="block-box">
+        <button class="btn btn-success" id="saveButton">저장</button>
+        <button class="btn btn-default" id="loadButton">불러오기</button>
+      </div>
+    </div>
+  </body>
+</html>
