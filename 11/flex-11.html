@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>플렉스 박스 레이아웃</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 1" />
+    <style>
+      .container {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        border: 1px solid #222;
+        gap: 10px;
+      }
+      .box {
+        /* 창의 크기를 줄이면 박스 4개 (1200px)에서 줄어든 크기를 비율대로 줄임 */
+        flex-basis: 300px;
+
+        /* 안의 내용만큼 너비 유지되고 flex-shrink 적용 안됨 */
+        /* flex-basis: auto; */
+      }
+      .box:nth-child(odd) {
+        background-color: #ffc400;
+      }
+      .box:nth-child(even) {
+        background-color: #a6ff00;
+      }
+      p {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Do it! 플렉스 항목별로 축소 비율 지정하기 */
+      #box1 {
+        flex-shrink: 1;
+      }
+      #box2 {
+        flex-shrink: 0; /* 창의 크기가 줄어도 기본 너비 유지됨 */
+      }
+      #box3 {
+        flex-shrink: 1;
+      }
+      #box4 {
+        flex-shrink: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box1"><p>11111111111111</p></div>
+      <div class="box" id="box2"><p>22222222222222</p></div>
+      <div class="box" id="box3"><p>33333333333333</p></div>
+      <div class="box" id="box4"><p>44444444444444</p></div>
+    </div>
+  </body>
+</html>

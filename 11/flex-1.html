@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플렉스 박스 레이아웃</title>
+    <style>
+      .container {
+        width: 700px;
+        background-color: #eee;
+        border: 1px solid #222;
+        margin-bottom: 30px;
+        /* display는 block, inline, inline-block 외에 
+        수평 구조를 만들기 쉬운 flex */
+        /* container의 display 속성 flex 지정 */
+        display: flex;
+      }
+      .box {
+        padding: 5px 45px;
+        margin: 5px;
+        width: 80px;
+      }
+      .box:nth-child(odd) {
+        background-color: rgb(255, 187, 0);
+      }
+      .box:nth-child(even) {
+        background-color: rgb(35, 220, 35);
+      }
+      p {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* Do it! 주축의 방향을 지정하는 #opt1 ~ #opt4 스타일 만들기 */
+      #opt1 {
+        /* 주축: left to right */
+        flex-direction: row;
+      }
+      #opt2 {
+        /* 주축: right to left */
+        flex-direction: row-reverse;
+      }
+      #opt3 {
+        /* 주축: top to bottom */
+        flex-direction: column;
+      }
+      #opt4 {
+        /* 주축: bottom to top */
+        flex-direction: column-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- (.container#opt$>(.box>p{$})*3)*4 -->
+    <div class="container" id="opt1">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+    <div class="container" id="opt2">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+    <div class="container" id="opt3">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+    <div class="container" id="opt4">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+  </body>
+</html>

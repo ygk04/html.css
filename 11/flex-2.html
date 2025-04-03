@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>플렉스 박스 레이아웃</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .container {
+        width: 700px;
+        display: flex; /* 플렉스 컨테이너 지정 */
+        flex-direction: row; /* 주축을 가로(row) 방향으로 설정 */
+        background-color: #eee;
+        border: 1px solid #222;
+        margin-bottom: 30px;
+      }
+
+      .box {
+        padding: 5px 45px;
+        margin: 5px;
+        width: 80px;
+        background-color: #222;
+      }
+
+      .box:nth-child(odd) {
+        background-color: rgb(255, 187, 0);
+      }
+
+      .box:nth-child(even) {
+        background-color: rgb(35, 220, 35);
+      }
+
+      p {
+        color: #fff;
+        text-align: center;
+      }
+
+      /* Do it! 줄바꿈을 지정하는 #opt1 ~ #opt3 스타일 만들기 */
+      #opt1 {
+        flex-wrap: nowrap; /* 한 줄로 표시 */
+      }
+
+      #opt2 {
+        flex-wrap: wrap; /* 여러 줄로 표시 */
+
+        /* 주축의 기본 방향: left to right (왼쪽 → 오른쪽) */
+        /* (기본값) row */
+        flex-direction: row;
+
+        /* 주축의 방향을 right to left (오른쪽 → 왼쪽) */
+        /* flex-direction: row-reverse; */
+
+        /* row 및 row-reverse에서 교차축(cross-axis)의 방향: top to bottom (위 → 아래) */
+
+        /* 주축을 세로(top to bottom, 위 → 아래)로 변경 */
+        /* flex-direction: column;  */
+
+        /* 주축을 bottom to top (아래 → 위)로 변경 */
+        /* flex-direction: column-reverse;  */
+
+        /* column 및 column-reverse에서 교차축(cross-axis)의 방향: left to right (왼쪽 → 오른쪽) */
+      }
+
+      #opt3 {
+        flex-wrap: wrap-reverse; /* 여러 줄 표시, 교차축의 시작점과 끝점이 반대로 */
+
+        /* 주축의 기본 방향: left to right (왼쪽 → 오른쪽) */
+        /* (기본값) row */
+
+        /* 주축의 방향을 right to left (오른쪽 → 왼쪽) */
+        /* flex-direction: row-reverse; */
+
+        /* row 및 row-reverse에서 교차축(cross-axis)의 방향: bottom to top (아래 → 위) */
+
+        /* 주축을 세로(top to bottom, 위 → 아래)로 변경 */
+        /* flex-direction: column;  */
+
+        /* 주축을 bottom to top (아래 → 위)로 변경 */
+        /* flex-direction: column-reverse;  */
+
+        /* column 및 column-reverse에서 교차축(cross-axis)의 방향은 그대로이나 반전시킴 : right to left (오른쪽 → 왼쪽) */
+      }
+    </style>
+  </head>
+  <body>
+    <h3>nowrap</h3>
+    <div class="container" id="opt1">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+      <div class="box"><p>5</p></div>
+      <div class="box"><p>6</p></div>
+    </div>
+    <h3>wrap</h3>
+    <div class="container" id="opt2">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+      <div class="box"><p>5</p></div>
+      <div class="box"><p>6</p></div>
+    </div>
+    <h3>wrap-reverse</h3>
+    <div class="container" id="opt3">
+      <div class="box"><p>1</p></div>
+      <div class="box"><p>2</p></div>
+      <div class="box"><p>3</p></div>
+      <div class="box"><p>4</p></div>
+      <div class="box"><p>5</p></div>
+      <div class="box"><p>6</p></div>
+    </div>
+  </body>
+</html>

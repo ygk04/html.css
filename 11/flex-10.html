@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>플렉스 박스 레이아웃</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 1" />
+    <style>
+      .container {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        border: 1px solid #222;
+        gap: 10px;
+      }
+
+      .box:nth-child(odd) {
+        background-color: #ffc400;
+      }
+      .box:nth-child(even) {
+        background-color: #a6ff00;
+      }
+      p {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .box {
+        /* 창의 크기를 줄여도 비율 유지됨 */
+        flex-basis: auto;
+
+        /* 창의 크기를 줄이면 남은 공백을 못 나누고 기본 너비만큼만 */
+        /* flex-basis: 150px; */
+      }
+
+      /* Do it! 플렉스 항목의 flex-grow 지정하기 */
+      #box1 {
+        flex-grow: 1;
+      }
+      #box2 {
+        flex-grow: 1;
+      }
+      #box3 {
+        flex-grow: 0;
+      }
+      #box4 {
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="box1"><p>1</p></div>
+      <div class="box" id="box2"><p>2</p></div>
+      <div class="box" id="box3"><p>3</p></div>
+      <div class="box" id="box4"><p>4</p></div>
+    </div>
+  </body>
+</html>

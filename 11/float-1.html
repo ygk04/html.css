@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float을 이용한 수평 구성 ver.1</title>
+    <style>
+      div {
+        border: 1px solid black;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      .box {
+        float: left;
+      }
+
+      .clear-element {
+        clear: both;
+      }
+      /* 이 방법은 컨테이너 없이 단순하게 수평 구조를 만들수 있지만
+      clear-element라는 이름(class)의 다음(next) 요소도 있어야 함 */
+      /* .box {
+        float: left;
+      }
+      .clear-element {
+        clear: both;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- .box{4*}*3+.clear-element{4}  -->
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="clear-element">4</div>
+  </body>
+</html>

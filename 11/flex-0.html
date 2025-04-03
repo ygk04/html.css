@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>플렉스 박스 레이아웃</title>
+    <style>
+      .container {
+        width: 300px;
+        background-color: #eee;
+        border: 1px solid #222;
+        margin-bottom: 30px;
+        /* display는 block, inline, inline-block 외에 
+        수평 구조를 만들기 쉬운 flex 또는 inline-flex */
+        /* container의 display 속성 flex 지정 */
+        display: flex;
+      }
+
+      .box {
+        padding: 5px 15px;
+        margin: 5px;
+        width: 80px;
+      }
+
+      .box:nth-child(odd) {
+        background-color: rgb(255, 157, 0);
+      }
+      .box:nth-child(even) {
+        background-color: rgb(35, 220, 35);
+      }
+
+      p {
+        text-align: center;
+        font-weight: bold;
+      }
+      /* display: flex; */ /* Flex Container만 Block 요소와 같은 수직 쌓임, 내부 Items는 무관함 */
+      /* display: inline-flex; */ /* Flex Container만 inline 요소와 같은 수평 쌓임, 내부 Items는 무관함 */
+    </style>
+  </head>
+  <body>
+    <!-- (.container#opt$>(.box>p{$})*3)*4 -->
+    <div class="container" id="opt1">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+    <div class="container" id="opt2">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+    <div class="container" id="opt3">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+    <div class="container" id="opt4">
+      <div class="box">
+        <p>1</p>
+      </div>
+      <div class="box">
+        <p>2</p>
+      </div>
+      <div class="box">
+        <p>3</p>
+      </div>
+    </div>
+  </body>
+</html>
